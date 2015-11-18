@@ -29,7 +29,8 @@ app.on('ready', function() {
     resizable: true,
     'standard-window': false,
     'fullscreen': false,
-    'frame': true
+    'title-bar-style': 'hidden',
+    'frame': false
   });
 
   // and load the index.html of the app.
