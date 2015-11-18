@@ -614,13 +614,11 @@ input#title {
     clear: left;
 }
 
-::selection,
 .ae-editable ::selection {
-    background: none !important;
+    background: #f58e2c !important;
 }
 
 button#publish {
-    color: #1a95d5;
     border: none;
     background: none;
 }
