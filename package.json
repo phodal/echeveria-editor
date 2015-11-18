@@ -1,0 +1,25 @@
+{
+  "name": "echeveria-editor",
+  "version": "0.0.1",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atom/echeveria-editor.git"
+  },
+  "keywords": [
+    "Editor"
+  ],
+  "author": "GitHub",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atom/echeveria-editor/issues"
+  },
+  "homepage": "https://github.com/atom/echeveria-editor#readme",
+  "devDependencies": {
+    "electron-prebuilt": "^0.35.0"
+  }
+}
