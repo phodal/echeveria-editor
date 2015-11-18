@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="zh-cn">
@@ -9,14 +9,25 @@
     <link href="libs/font-awesome/css/font-awesome.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
     <script src="libs/alloy-editor/alloy-editor-all-min.js"></script>
-  </head>
-  <body>
-    <div class="titleLine"><i class="fa fa-fw fa-file-text-o mode"></i><span id="title">标题</span></div>
-    <div id="editor">We are using node <script>document.write(process.versions.node)</script>,
-      Chrome <script>document.write(process.versions.chrome)</script>,
-      and Electron <script>document.write(process.versions.electron)</script>.</div>
-  </body>
-  <script>
+</head>
+<body>
+<div class="article">
+    <div class="titleLine"><i class="fa fa-fw fa-file-text-o mode"></i>
+        <input type="text" id="title" placeholder="标题"/>
+    </div>
+    <div id="editor">We are using node
+        <script>document.write(process.versions.node)</script>
+        ,
+        Chrome
+        <script>document.write(process.versions.chrome)</script>
+        ,
+        and Electron
+        <script>document.write(process.versions.electron)</script>
+        .
+    </div>
+</div>
+</body>
+<script>
     AlloyEditor.editable('editor');
-  </script>
+</script>
 </html>
