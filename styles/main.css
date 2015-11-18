@@ -611,6 +611,7 @@ input#title {
 
 #editor {
     margin: 1em 3em;
+    clear: left;
 }
 
 ::selection,
