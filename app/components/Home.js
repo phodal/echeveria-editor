@@ -7,14 +7,14 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        <div className="article">
-          <div className="titleLine">
-            <div id="headline">
+        <div className={styles.article}>
+          <div className={styles.titleLine}>
+            <div className={styles.headLine}>
               <i className="fa fa-fw fa-edit mode"></i>
               <input type="text" id="title" placeholder="标题"/>
             </div>
-            <div>
-              <button id="publish" type="submit" className="fa fa-fw fa-paper-plane-o mode"></button>
+            <div className={styles.publish}>
+              <button type="submit" className="fa fa-fw fa-paper-plane-o mode"/>
             </div>
           </div>
           <div id="editor">

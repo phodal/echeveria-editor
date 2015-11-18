@@ -12,3 +12,38 @@
 .container a {
   font-size: 1.4rem;
 }
+
+.titleLine {
+  margin: 0.5em 0.8em;
+  font-size: 2em;
+}
+
+.headLine {
+  float: left;
+}
+
+.headLine input {
+  margin: 0.5em 0.8em;
+  font-size: 0.8em;
+  border: none;
+  background: transparent;
+}
+
+input#title {
+  font-size: 1em;
+  border: none;
+}
+
+#editor {
+  margin: 1em 2em;
+  clear: left;
+}
+
+.publish button {
+  border: none;
+  background: none;
+}
+
+.publish button:hover {
+  color: #1d75b3;
+}

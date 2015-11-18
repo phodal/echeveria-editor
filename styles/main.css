@@ -599,34 +599,6 @@ article table thead,
     border-bottom: 1px solid #ddd;
 }
 
-.titleLine {
-    margin: 0.5em 0.8em;
-    font-size: 2em;
-}
-
-input#title {
-    font-size: 1em;
-    border: none;
-}
-
-#editor {
-    margin: 1em 2em;
-    clear: left;
-}
-
-.ae-editable ::selection {
-    background: #f58e2c !important;
-}
-
-button#publish {
-    border: none;
-    background: none;
-}
-
-button#publish:hover {
-    color: #1d75b3;
-}
-
 header {
     -webkit-app-region: drag;
     -webkit-user-select: none;
