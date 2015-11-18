@@ -19,7 +19,6 @@ export default class App extends Component {
           </ul>
         </div>
         {this.props.children}
-        <DevTools />
       </div>
     );
   }

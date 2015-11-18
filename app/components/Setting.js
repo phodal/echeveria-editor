@@ -5,7 +5,9 @@ export default class Setting extends Component {
   constructor() {
     super();
     this.state = {
-      autoHideDuration: 0
+      autoHideDuration: 0,
+      repo: localStorage.getItem('repo'),
+      token: localStorage.getItem('token')
     };
     this.handleRepoChange = this.handleRepoChange.bind(this);
     this.handleTokenChange = this.handleTokenChange.bind(this);
@@ -16,14 +18,15 @@ export default class Setting extends Component {
     this.setState({
       repo: e.target.value
     });
+    localStorage.setItem('repo', e.target.value)
   };
 
   handleTokenChange(e) {
     this.setState({
       token: e.target.value
     });
+    localStorage.setItem('token', e.target.value)
   };
-
 
   handleSubmit() {
     this.refs.snackbar.show();
@@ -50,26 +53,26 @@ export default class Setting extends Component {
 
     return (
       <ClearFix>
-        <div style={styles.group} >
+        <div style={styles.group}>
           <TextField
             style={styles.textfield}
-            hintText="Hint Text"
-            defaultValue="phodal-archive/echeveria-editor"
+            hintText="phodal-archive/echeveria-content"
+            defaultValue={this.state.repo}
             floatingLabelText="Github Repo Name"
             onChange={this.handleRepoChange}/>
 
           <TextField
             style={styles.textfield}
-            hintText="Hint Text"
-            defaultValue="xxx"
+            hintText="789e99d9c009...."
+            defaultValue={this.state.token}
             floatingLabelText="Github Token"
-            onChange={this.handleTokenChange} />
+            onChange={this.handleTokenChange}/>
 
           <RaisedButton label="Save" secondary={true} onMouseDown={this.handleSubmit}/>
           <Snackbar
             ref="snackbar"
             message="Save Successful"
-            autoHideDuration={this.state.autoHideDuration} />
+            autoHideDuration={this.state.autoHideDuration}/>
 
         </div>
       </ClearFix>

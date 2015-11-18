@@ -10,7 +10,8 @@ export default class Home extends Component {
     super();
     this.state = {
       autoHideDuration: 0,
-      sending: 0
+      sending: 0,
+      message: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -20,12 +21,24 @@ export default class Home extends Component {
     this.setState({
       sending: 1
     });
+
+    if(localStorage.getItem('token') === null || localStorage.getItem('repo') === null){
+      that.setState({message: "跳转到设置中..."});
+      that.refs.snackbar.show();
+      return;
+    }
+
+    var token = localStorage.getItem('token');
+    var username = localStorage.getItem('repo').split("/")[0];
+    var reponame = localStorage.getItem('repo').split("/")[1];
+
     var github = new GitHubApi({
-      token: "",
+      token: token,
       auth: "oauth"
     });
-    var repo = github.getRepo("phodal-archive", "echeveria-content");
+    var repo = github.getRepo(username, reponame);
     repo.read('master', 'README.md', function (err, data) {
+      that.setState({message: "上传成功"});
       that.refs.snackbar.show();
       that.setState({
         sending: 0
@@ -34,6 +47,8 @@ export default class Home extends Component {
   };
 
   render() {
+    var Message = this.state.message;
+
     return (
       <div>
         <div className={styles.article}>
@@ -53,7 +68,7 @@ export default class Home extends Component {
         </div>
         <Snackbar
           ref="snackbar"
-          message="上传成功"
+          message={Message}
           autoHideDuration={this.state.autoHideDuration}/>
       </div>
     );
