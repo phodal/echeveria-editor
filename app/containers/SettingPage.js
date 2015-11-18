@@ -47,7 +47,6 @@ export default class SettingPage extends Component {
 
   render() {
     var styles = this.getStyles();
-    console.log(this.state);
 
     return (
       <ClearFix>

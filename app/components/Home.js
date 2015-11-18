@@ -9,13 +9,17 @@ export default class Home extends Component {
   constructor() {
     super();
     this.state = {
-      autoHideDuration: 0
+      autoHideDuration: 0,
+      sending: 0
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit() {
     var that = this;
+    this.setState({
+      sending: 1
+    });
     var github = new GitHubApi({
       token: "",
       auth: "oauth"
@@ -23,7 +27,9 @@ export default class Home extends Component {
     var repo = github.getRepo("phodal-archive", "echeveria-content");
     repo.read('master', 'README.md', function (err, data) {
       that.refs.snackbar.show();
-      console.log(data);
+      that.setState({
+        sending: 0
+      });
     });
   };
 
@@ -38,7 +44,7 @@ export default class Home extends Component {
                 hintText="标题"/>
             </div>
             <div className={styles.publish}>
-              <button type="submit" className="fa fa-fw fa-paper-plane-o mode" onClick={this.handleSubmit}/>
+              <button type="submit" className="fa fa-fw fa-paper-plane-o mode" onClick={this.handleSubmit} disabled={this.sending}/>
             </div>
           </div>
           <div id="editor" className={styles.editor}>
