@@ -4,7 +4,6 @@ import styles from './Home.module.css';
 const { TextField,Snackbar,DatePicker } = require('material-ui');
 const GitHubApi = require("github-api");
 
-
 export default class Home extends Component {
   constructor() {
     super();
