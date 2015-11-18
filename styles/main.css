@@ -626,3 +626,52 @@ button#publish {
 button#publish:hover {
     color: #1d75b3;
 }
+
+header {
+    -webkit-app-region: drag;
+    -webkit-user-select: none;
+    cursor: default;
+    color: #fff;
+    background-color: #aaa;
+    width: 100%;
+    height: 80px;
+    display: table;
+    margin: 0 auto;
+}
+
+header ul.horizontal {
+    padding: 0;
+    margin: auto;
+    height: inherit;
+    min-width: 696px;
+    list-style: none;
+}
+
+header ul.horizontal li {
+    display: inline;
+}
+
+header ul.horizontal li a,
+header ul.horizontal li a:hover {
+    -webkit-app-region: no-drag;
+    position: relative;
+    display: inline-block;
+    margin: 25px;
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+}
+
+header ul.horizontal li a.active:after,
+header ul.horizontal li a:hover.active:after {
+    top: 100%;
+    left: 50%;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border: 10px solid rgba(255, 255, 255, 0);
+    border-bottom-color: #fafafa;
+    margin-left: -10px;
+}
