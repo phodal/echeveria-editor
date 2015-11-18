@@ -82,6 +82,7 @@
     "alloyeditor": "^0.7.0",
     "electron-debug": "^0.4.0",
     "font-awesome": "^4.4.0",
+    "github-api": "^0.10.7",
     "history": "^1.13.0",
     "object-assign": "^4.0.1",
     "react": "^0.14.2",
