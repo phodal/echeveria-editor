@@ -11,6 +11,7 @@ export default class Home extends Component {
     this.state = {
       autoHideDuration: 0,
       sending: 0,
+      title: "",
       message: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -66,6 +67,7 @@ export default class Home extends Component {
             <div className={styles.headLine}>
               <i className="fa fa-fw fa-edit mode"></i>
               <TextField
+                defaultValue={this.state.title}
                 hintText="标题"/>
               <TextField
                 style={inlineStyles.link}
