@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import styles from './Home.module.css';
 import GithubAPI from 'github-api';
-import TextField from 'material-ui/lib/text-field';
+const { TextField } = require('material-ui');
 
 export default class Home extends Component {
   render() {
