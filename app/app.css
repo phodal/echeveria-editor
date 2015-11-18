@@ -3,6 +3,8 @@ body {
   height: 100vh;
   font-family: Arial, Helvetica, Helvetica Neue, serif;
   overflow-y: hidden;
+  padding: 0;
+  margin: 0;
 }
 
 h2 {
