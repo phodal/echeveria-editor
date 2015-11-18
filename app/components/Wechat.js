@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import styles from './Counter.module.css';
 
-class Counter extends Component {
+class Wechat extends Component {
   static propTypes = {
     increment: PropTypes.func.isRequired,
     incrementIfOdd: PropTypes.func.isRequired,
@@ -38,4 +38,4 @@ class Counter extends Component {
   }
 }
 
-export default Counter;
+export default Wechat;
