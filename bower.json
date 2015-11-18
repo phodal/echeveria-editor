@@ -19,6 +19,7 @@
     "tests"
   ],
   "dependencies": {
-    "alloyeditor": "~0.7.0"
+    "alloyeditor": "~0.7.0",
+    "font-awesome": "~4.4.0"
   }
 }
