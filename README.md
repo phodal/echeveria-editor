@@ -1,30 +1,37 @@
 # Echeveria Editor
 
-**Clone and run for a quick way to see an Electron in action.**
+> A Multi-Platform editor for Echeveria Project
 
-This is a minimal Electron application based on the [Quick Start Guide](http://electron.atom.io/docs/latest/tutorial/quick-start) within the Electron documentation.
+##Features
 
-A basic Electron application needs just these files:
+- Push BlogPosts to Github
+- Wechat Public Editor
+- Markdown Support
+- ...
 
-- `index.html` - A web page to render.
-- `main.js` - Starts the app and creates a browser window to render HTML.
-- `package.json` - Points to the app's main file and lists its details and dependencies.
 
-You can learn more about each of these components within the [Quick Start Guide](http://electron.atom.io/docs/latest/tutorial/quick-start).
+##Download(TBC)
 
-## To Use
+## To Development
 
-To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+###Tech Stack
+
+- Electron
+- React
+- Material UI
 
 ```bash
-# Clone this repository
-$ git clone https://github.com/atom/electron-quick-start
-# Go into the repository
-$ cd electron-quick-start
-# Install dependencies and run the app
+#Clone this repository
+
+$ git clone https://github.com/phodal/echeveria-editor
+
+#Go into the repository
+
+$ cd echeveria-editor
+
+#Install dependencies and run the app
+
 $ npm install && npm start
 ```
-
-Learn more about Electron and its API in the [documentation](http://electron.atom.io/docs/latest).
 
 #### License [MIT](LICENSE.md)
