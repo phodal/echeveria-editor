@@ -11,19 +11,19 @@
     <script src="libs/alloy-editor/alloy-editor-all-min.js"></script>
     <script src="libs/github.js"></script>
     <script>
-        var github = new Github({
-            token: "",
-            auth: "oauth"
-        });
-
-        var repo = github.getRepo("phodal-archive", "echeveria-content");
-
-        var options = {
-            author: {name: 'Phodal', email: 'h@phodal.com'},
-            committer: {name: 'Phodal', email: 'h@phodal.com'},
-            encode: true // Whether to base64 encode the file. (default: true)
-        };
-        repo.write('master', 'contents/api-test.json', 'hello,world', 'test for browser push', options, function(err) {});
+//        var github = new Github({
+//            token: "",
+//            auth: "oauth"
+//        });
+//
+//        var repo = github.getRepo("phodal-archive", "echeveria-content");
+//
+//        var options = {
+//            author: {name: 'Phodal', email: 'h@phodal.com'},
+//            committer: {name: 'Phodal', email: 'h@phodal.com'},
+//            encode: true // Whether to base64 encode the file. (default: true)
+//        };
+//        repo.write('master', 'contents/api-test.json', 'hello,world', 'test for browser push', options, function(err) {});
     </script>
 </head>
 <body>

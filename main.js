@@ -33,8 +33,15 @@ app.on('ready', function() {
     'frame': false
   });
 
+  console.log(process.env.HOT);
+  if (process.env.HOT) {
+    mainWindow.loadUrl('file://' + __dirname + '/app/hot-dev-app.html');
+  } else {
+    mainWindow.loadUrl('file://' + __dirname + '/app/app.html');
+  }
+
   // and load the index.html of the app.
-  mainWindow.loadUrl('file://' + __dirname + '/index.html');
+  //mainWindow.loadUrl('file://' + __dirname + '/index.html');
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
