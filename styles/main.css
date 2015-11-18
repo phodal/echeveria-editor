@@ -600,7 +600,7 @@ article table thead,
 }
 
 .titleLine {
-    margin: 0.5em 1.2em;
+    margin: 0.5em 0.8em;
     font-size: 2em;
 }
 
@@ -610,7 +610,7 @@ input#title {
 }
 
 #editor {
-    margin: 1em 3em;
+    margin: 1em 2em;
     clear: left;
 }
 
@@ -656,7 +656,7 @@ header ul.horizontal li a:hover {
     -webkit-app-region: no-drag;
     position: relative;
     display: inline-block;
-    margin: 25px;
+    margin: 5px;
     font-size: 25px;
     color: #fff;
     text-decoration: none;
