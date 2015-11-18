@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="zh-cn">
     <title>Hello World!</title>
     <link href="libs/alloy-editor/assets/alloy-editor-ocean-min.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
     <script src="libs/alloy-editor/alloy-editor-all-min.js"></script>
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <h1 id="title">标题</h1>
     <div id="editor">We are using node <script>document.write(process.versions.node)</script>,
       Chrome <script>document.write(process.versions.chrome)</script>,
       and Electron <script>document.write(process.versions.electron)</script>.</div>
   </body>
   <script>
+    AlloyEditor.editable('title');
     AlloyEditor.editable('editor');
   </script>
 </html>
