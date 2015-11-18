@@ -38,4 +38,4 @@ class Wechat extends Component {
   }
 }
 
-export default Wechat;
+export default Counter;
