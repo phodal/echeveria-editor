@@ -1,0 +1,24 @@
+{
+  "name": "y",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "authors": [
+    "Phodal Huang"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Editor"
+  ],
+  "homepage": "https://github.com/phodal/echeveria-editor",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "alloyeditor": "~0.7.0"
+  }
+}
