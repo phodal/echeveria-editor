@@ -11,13 +11,12 @@
     <script src="libs/alloy-editor/alloy-editor-all-min.js"></script>
   </head>
   <body>
-    <h1><i class="fa fa-fw fa-file-text-o mode"></i> <span id="title">标题</span></h1>
+    <div class="titleLine"><i class="fa fa-fw fa-file-text-o mode"></i><span id="title">标题</span></div>
     <div id="editor">We are using node <script>document.write(process.versions.node)</script>,
       Chrome <script>document.write(process.versions.chrome)</script>,
       and Electron <script>document.write(process.versions.electron)</script>.</div>
   </body>
   <script>
-    AlloyEditor.editable('title');
     AlloyEditor.editable('editor');
   </script>
 </html>

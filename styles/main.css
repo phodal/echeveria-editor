@@ -598,3 +598,17 @@ article table thead,
 .article table thead {
     border-bottom: 1px solid #ddd;
 }
+
+.titleLine {
+    margin: 0.5em 1.4em;
+    font-size: 2em;
+}
+
+#editor {
+    margin: 1em 3em;
+}
+
+::selection,
+.ae-editable ::selection {
+    background: none !important;
+}
