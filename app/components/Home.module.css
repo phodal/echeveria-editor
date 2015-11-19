@@ -49,3 +49,7 @@
 .publish button:hover {
   color: #1d75b3;
 }
+
+.clear {
+  clear: left;
+}

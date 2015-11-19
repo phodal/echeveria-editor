@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import styles from './Home.module.css';
-const { TextField,Snackbar,DatePicker } = require('material-ui');
+const { TextField,Snackbar } = require('material-ui');
 const GitHubApi = require("github-api");
 import pinyin from "pinyin";
 
@@ -13,11 +13,13 @@ export default class Home extends Component {
       sending: 0,
       title: "",
       link: "",
+      date: "",
       message: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleAuthorChange = this.handleAuthorChange.bind(this);
+    this.handleDateChange = this.handleDateChange.bind(this);
   }
 
   handleSubmit() {
@@ -69,10 +71,20 @@ export default class Home extends Component {
     });
   };
 
+  handleDateChange(e) {
+    this.setState({
+      date: e.target.value
+    });
+  };
+
   static getStyles() {
     return {
       link: {
         marginLeft: "2em"
+      },
+      author: {
+        marginLeft: "2em",
+        width: "4em"
       }
     };
   };
@@ -94,7 +106,7 @@ export default class Home extends Component {
                 floatingLabelText="标题"
                 hintText="标题"/>
               <TextField
-                style={inlineStyles.link}
+                style={inlineStyles.author}
                 defaultValue={this.state.author}
                 onChange={this.handleAuthorChange}
                 floatingLabelText="作者"
@@ -105,6 +117,12 @@ export default class Home extends Component {
                 defaultValue={this.state.link}
                 floatingLabelText="链接名"
                 hintText="biaoti-2014"/>
+              <TextField
+                style={inlineStyles.link}
+                defaultValue={this.state.date}
+                onChange={this.handleDateChange}
+                type="date"
+                floatingLabelText="日期" />
             </div>
             <div className={styles.publish}>
               <button type="submit" className="fa fa-fw fa-paper-plane-o mode" onClick={this.handleSubmit}

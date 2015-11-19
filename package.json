@@ -85,6 +85,7 @@
     "github-api": "^0.10.7",
     "history": "^1.13.0",
     "material-ui": "^0.13.3",
+    "moment": "^2.10.6",
     "pinyin": "^2.6.2",
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
