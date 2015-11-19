@@ -83,7 +83,7 @@
   "dependencies": {
     "electron-debug": "^0.4.0",
     "font-awesome": "^4.4.0",
-    "github-api": "^0.10.7",
+    "github-api": "git://github.com/michael/github.git#master",
     "history": "^1.13.0",
     "limax": "^1.1.4",
     "marked": "^0.3.5",
