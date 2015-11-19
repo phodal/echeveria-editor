@@ -14,7 +14,7 @@ export default class Home extends Component {
       sending: 0,
       title: "",
       author: "白米君",
-      link: "",
+      url: "",
       date: moment(Date.now()).format('YYYY-MM-DD'),
       message: ""
     };
@@ -23,7 +23,7 @@ export default class Home extends Component {
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleAuthorChange = this.handleAuthorChange.bind(this);
     this.handleDateChange = this.handleDateChange.bind(this);
-    this.handleLinkChange = this.handleLinkChange.bind(this);
+    this.handleURLChange = this.handleURLChange.bind(this);
   }
 
   handleSubmit() {
@@ -47,19 +47,39 @@ export default class Home extends Component {
       auth: "oauth"
     });
     var repo = github.getRepo(username, reponame);
-    repo.read('master', 'README.md', function (err, data) {
-      that.setState({message: "上传成功" + data});
-      that.refs.snackbar.show();
-      that.setState({
-        sending: 0
-      });
-    });
+
+    var options = {
+      author: {name: username, email: 'robot@baimizhou.net'},
+      committer: {name: username, email: 'robot@baimizhou.net'},
+      encode: true
+    };
+
+    var data = {
+      title: that.state.title,
+      author: that.state.author,
+      url: '/' + that.state.url,
+      date: '/' + that.state.date
+    };
+
+    console.log(JSON.stringify(data));
+
+    //repo.write('master', 'path/to/file', 'YOUR_NEW_CONTENTS', 'YOUR_COMMIT_MESSAGE', options, function(err) {
+    //  console.log(data);
+    //});
+
+    //repo.read('master', 'README.md', function (err, data) {
+    //  that.setState({message: "上传成功" + data});
+    //  that.refs.snackbar.show();
+    //  that.setState({
+    //    sending: 0
+    //  });
+    //});
   };
 
   handleTitleChange(e) {
     this.setState({
       title: e.target.value,
-      link: slug(e.target.value, {tone: false})
+      url: slug(e.target.value, {tone: false})
     });
   };
 
@@ -75,9 +95,9 @@ export default class Home extends Component {
     });
   };
 
-  handleLinkChange(e) {
+  handleURLChange(e) {
     this.setState({
-      link: e.target.value
+      url: e.target.value
     });
   };
 
@@ -123,9 +143,9 @@ export default class Home extends Component {
 
               <TextField
                 style={inlineStyles.link}
-                defaultValue={this.state.link}
+                defaultValue={this.state.url}
                 value={this.state.link}
-                onChange={this.handleLinkChange}
+                onChange={this.handleURLChange}
                 floatingLabelText="链接名"
                 hintText="baimizhou-2014"/>
 
