@@ -34,9 +34,9 @@ app.on('ready', function() {
   });
 
   if (process.env.HOT) {
-    mainWindow.loadURL('file://' + __dirname + '/app/hot-dev-app.html');
+    mainWindow.loadUrl('file://' + __dirname + '/app/hot-dev-app.html');
   } else {
-    mainWindow.loadURL('file://' + __dirname + '/app/app.html');
+    mainWindow.loadUrl('file://' + __dirname + '/app/app.html');
   }
 
   // and load the index.html of the app.
