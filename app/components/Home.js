@@ -29,14 +29,14 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
-    if(localStorage.getItem('data') !== null ){
+    if (localStorage.getItem('data') !== null) {
       var data = JSON.parse(localStorage.getItem('data'));
       this.setState({
         title: data.title,
         author: data.author,
         url: data.url,
         date: data.date,
-        content: data.content
+        content: data.blogpost
       });
       document.getElementById('editor').innerHTML = data.contentHTML;
     }
@@ -79,22 +79,22 @@ export default class Home extends Component {
       url: that.state.url,
       date: that.state.date,
       contentHTML: innerHTML,
-      content: md
+      blogpost: md
     };
 
-    localStorage.setItem('data', JSON.stringify(data));
+    var stringifyData = JSON.stringify(data);
+    localStorage.setItem('data', stringifyData);
 
-    //repo.write('master', 'path/to/file', 'YOUR_NEW_CONTENTS', 'YOUR_COMMIT_MESSAGE', options, function(err) {
-    //  console.log(data);
-    //});
-
-    //repo.read('master', 'README.md', function (err, data) {
-    //  that.setState({message: "上传成功" + data});
-    //  that.refs.snackbar.show();
-    //  that.setState({
-    //    sending: 0
-    //  });
-    //});
+    repo.write('master', 'contents/' + data.url + '.json', stringifyData, 'Robot: add article ' + data.title, options, function (err, data) {
+      console.log(err, data);
+      if(data.commit){
+        that.setState({message: "上传成功" + JSON.stringify(data)});
+        that.refs.snackbar.show();
+        that.setState({
+          sending: 0
+        });
+      }
+    });
   };
 
   handleTitleChange(e) {
