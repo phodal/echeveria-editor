@@ -51,19 +51,19 @@ export default class Home extends Component {
 
   handleTitleChange(e) {
 
-    var link = pinyin(e.target.value, {
+    var linkName = pinyin(e.target.value, {
       style: pinyin.STYLE_NORMAL // 设置拼音风格
     }).toString();
-    link = link.replace(/,/g, '-');
+    linkName = linkName.replace(/,/g, '-');
 
-    console.log(link);
+    console.log(linkName);
     this.setState({
       title: e.target.value,
-      link: link
+      link: linkName
     });
   };
 
-  getStyles() {
+  static getStyles() {
     return {
       link: {
         marginLeft: "2em"
@@ -73,7 +73,7 @@ export default class Home extends Component {
 
 
   render() {
-    var inlineStyles = this.getStyles();
+    var inlineStyles = Home.getStyles();
     var Message = this.state.message;
 
     return (
@@ -85,10 +85,13 @@ export default class Home extends Component {
               <TextField
                 defaultValue={this.state.title}
                 onChange={this.handleTitleChange}
+                floatingLabelText="标题 "
                 hintText="标题"/>
               <TextField
                 style={inlineStyles.link}
+                value={this.state.link}
                 defaultValue={this.state.link}
+                floatingLabelText="链接名"
                 hintText="链接名,如: biaoti-2014"/>
             </div>
             <div className={styles.publish}>
