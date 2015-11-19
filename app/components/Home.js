@@ -85,7 +85,6 @@ export default class Home extends Component {
     localStorage.setItem('data', stringifyData);
 
     repo.write('master', 'contents/' + data.url + '.json', stringifyData, 'Robot: add article ' + data.title, options, function (err, data) {
-      console.log(err, data);
       if(data.commit){
         that.setState({message: "上传成功" + JSON.stringify(data)});
         that.refs.snackbar.show();
