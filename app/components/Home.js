@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import styles from './Home.module.css';
 const { TextField,Snackbar,DatePicker } = require('material-ui');
 const GitHubApi = require("github-api");
+import pinyin from "pinyin";
 
 export default class Home extends Component {
   constructor() {
@@ -11,9 +12,11 @@ export default class Home extends Component {
       autoHideDuration: 0,
       sending: 0,
       title: "",
+      link: "",
       message: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleTitleChange = this.handleTitleChange.bind(this);
   }
 
   handleSubmit() {
@@ -46,6 +49,20 @@ export default class Home extends Component {
     });
   };
 
+  handleTitleChange(e) {
+
+    var link = pinyin(e.target.value, {
+      style: pinyin.STYLE_NORMAL // 设置拼音风格
+    }).toString();
+    link = link.replace(/,/g, '-');
+
+    console.log(link);
+    this.setState({
+      title: e.target.value,
+      link: link
+    });
+  };
+
   getStyles() {
     return {
       link: {
@@ -67,10 +84,11 @@ export default class Home extends Component {
               <i className="fa fa-fw fa-edit mode"></i>
               <TextField
                 defaultValue={this.state.title}
+                onChange={this.handleTitleChange}
                 hintText="标题"/>
               <TextField
                 style={inlineStyles.link}
-                defaultValue=""
+                defaultValue={this.state.link}
                 hintText="链接名,如: biaoti-2014"/>
             </div>
             <div className={styles.publish}>
