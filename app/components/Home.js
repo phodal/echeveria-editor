@@ -28,6 +28,20 @@ export default class Home extends Component {
     this.handleURLChange = this.handleURLChange.bind(this);
   }
 
+  componentDidMount() {
+    if(localStorage.getItem('data') !== null ){
+      var data = JSON.parse(localStorage.getItem('data'));
+      this.setState({
+        title: data.title,
+        author: data.author,
+        url: data.url,
+        date: data.date,
+        content: data.content
+      });
+      document.getElementById('editor').innerHTML = data.contentHTML;
+    }
+  }
+
   handleSubmit() {
     var that = this;
     this.setState({
@@ -56,15 +70,19 @@ export default class Home extends Component {
       encode: true
     };
 
-    var md = toMarkdown(document.getElementById('editor').innerHTML);
+    var innerHTML = document.getElementById('editor').innerHTML;
+    var md = toMarkdown(innerHTML);
 
     var data = {
       title: that.state.title,
       author: that.state.author,
-      url: '/' + that.state.url,
-      date: '/' + that.state.date,
+      url: that.state.url,
+      date: that.state.date,
+      contentHTML: innerHTML,
       content: md
     };
+
+    localStorage.setItem('data', JSON.stringify(data));
 
     //repo.write('master', 'path/to/file', 'YOUR_NEW_CONTENTS', 'YOUR_COMMIT_MESSAGE', options, function(err) {
     //  console.log(data);
@@ -157,7 +175,7 @@ export default class Home extends Component {
                 defaultValue={this.state.date}
                 onChange={this.handleDateChange}
                 type="date"
-                floatingLabelText="日期" />
+                floatingLabelText="日期"/>
 
             </div>
             <div className={styles.publish}>
