@@ -4,6 +4,7 @@ import styles from './Home.module.css';
 const { TextField,Snackbar } = require('material-ui');
 const GitHubApi = require("github-api");
 import pinyin from "pinyin";
+var moment = require('moment');
 
 export default class Home extends Component {
   constructor() {
@@ -13,9 +14,10 @@ export default class Home extends Component {
       sending: 0,
       title: "",
       link: "",
-      date: "",
+      date: moment(Date.now()).format('YYYY-MM-DD'),
       message: ""
     };
+    console.log(moment(Date.now()).format('YYYY-MM-DD'));
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleAuthorChange = this.handleAuthorChange.bind(this);
@@ -85,6 +87,10 @@ export default class Home extends Component {
       author: {
         marginLeft: "2em",
         width: "4em"
+      },
+      date: {
+        marginLeft: "2em",
+        width: "10em"
       }
     };
   };
@@ -118,7 +124,7 @@ export default class Home extends Component {
                 floatingLabelText="链接名"
                 hintText="biaoti-2014"/>
               <TextField
-                style={inlineStyles.link}
+                style={inlineStyles.date}
                 defaultValue={this.state.date}
                 onChange={this.handleDateChange}
                 type="date"
