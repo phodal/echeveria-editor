@@ -5,6 +5,8 @@ const { TextField,Snackbar } = require('material-ui');
 const GitHubApi = require("github-api");
 var slug = require('limax');
 var moment = require('moment');
+var marked = require('marked');
+var toMarkdown = require('to-markdown');
 
 export default class Home extends Component {
   constructor() {
@@ -18,7 +20,7 @@ export default class Home extends Component {
       date: moment(Date.now()).format('YYYY-MM-DD'),
       message: ""
     };
-    
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleAuthorChange = this.handleAuthorChange.bind(this);
@@ -54,14 +56,15 @@ export default class Home extends Component {
       encode: true
     };
 
+    var md = toMarkdown(document.getElementById('editor').innerHTML);
+
     var data = {
       title: that.state.title,
       author: that.state.author,
       url: '/' + that.state.url,
-      date: '/' + that.state.date
+      date: '/' + that.state.date,
+      content: md
     };
-
-    console.log(JSON.stringify(data));
 
     //repo.write('master', 'path/to/file', 'YOUR_NEW_CONTENTS', 'YOUR_COMMIT_MESSAGE', options, function(err) {
     //  console.log(data);
