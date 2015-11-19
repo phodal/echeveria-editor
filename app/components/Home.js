@@ -13,6 +13,7 @@ export default class Home extends Component {
       autoHideDuration: 0,
       sending: 0,
       title: "",
+      author: "白米君",
       link: "",
       date: moment(Date.now()).format('YYYY-MM-DD'),
       message: ""
