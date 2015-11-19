@@ -18,7 +18,7 @@ export default class Home extends Component {
       date: moment(Date.now()).format('YYYY-MM-DD'),
       message: ""
     };
-    console.log(moment(Date.now()).format('YYYY-MM-DD'));
+    
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleAuthorChange = this.handleAuthorChange.bind(this);
