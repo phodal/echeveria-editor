@@ -17,6 +17,7 @@ export default class Home extends Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
+    this.handleAuthorChange = this.handleAuthorChange.bind(this);
   }
 
   handleSubmit() {
@@ -50,7 +51,6 @@ export default class Home extends Component {
   };
 
   handleTitleChange(e) {
-
     var linkName = pinyin(e.target.value, {
       style: pinyin.STYLE_NORMAL // 设置拼音风格
     }).toString();
@@ -60,6 +60,12 @@ export default class Home extends Component {
     this.setState({
       title: e.target.value,
       link: linkName
+    });
+  };
+
+  handleAuthorChange(e) {
+    this.setState({
+      author: e.target.value
     });
   };
 
@@ -85,14 +91,20 @@ export default class Home extends Component {
               <TextField
                 defaultValue={this.state.title}
                 onChange={this.handleTitleChange}
-                floatingLabelText="标题 "
+                floatingLabelText="标题"
                 hintText="标题"/>
+              <TextField
+                style={inlineStyles.link}
+                defaultValue={this.state.author}
+                onChange={this.handleAuthorChange}
+                floatingLabelText="作者"
+                hintText="白米粥"/>
               <TextField
                 style={inlineStyles.link}
                 value={this.state.link}
                 defaultValue={this.state.link}
                 floatingLabelText="链接名"
-                hintText="链接名,如: biaoti-2014"/>
+                hintText="biaoti-2014"/>
             </div>
             <div className={styles.publish}>
               <button type="submit" className="fa fa-fw fa-paper-plane-o mode" onClick={this.handleSubmit}
