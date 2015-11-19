@@ -6,6 +6,9 @@ module.exports = {
       test: /\.jsx?$/,
       loaders: ['babel-loader'],
       exclude: /node_modules/
+    }, {
+      test: /\.json/,
+      loader: "json"
     }]
   },
   output: {
@@ -14,12 +17,10 @@ module.exports = {
     libraryTarget: 'commonjs2'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx', '.json'],
     packageMains: ['webpack', 'browser', 'web', 'browserify', ['jam', 'main'], 'main']
   },
-  plugins: [
-
-  ],
+  plugins: [],
   externals: [
     // put your node 3rd party libraries which can't be built with webpack here (mysql, mongodb, and so on..)
   ]
