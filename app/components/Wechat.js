@@ -23,8 +23,8 @@ class Wechat extends Component {
         author: data.author,
         url: data.url,
         date: data.date,
-        content: data.blogpost,
-        htmlContent: marked(data.blogpost)
+        content: data.content,
+        htmlContent: marked(data.content)
       });
       console.log(this.state.htmlContent)
     }

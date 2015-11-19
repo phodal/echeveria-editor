@@ -25,7 +25,7 @@ export default class Markdown extends Component {
         author: data.author,
         url: data.url,
         date: data.date,
-        content: data.blogpost
+        content: data.content
       });
     }
   }

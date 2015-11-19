@@ -35,7 +35,7 @@ export default class Home extends Component {
         author: data.author,
         url: data.url,
         date: data.date,
-        content: data.blogpost
+        content: data.content
       });
       document.getElementById('editor').innerHTML = data.contentHTML;
     }
@@ -78,7 +78,7 @@ export default class Home extends Component {
       url: that.state.url,
       date: that.state.date,
       contentHTML: innerHTML,
-      blogpost: md
+      content: md
     };
 
     var stringifyData = JSON.stringify(data);
