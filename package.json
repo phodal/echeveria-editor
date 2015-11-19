@@ -85,7 +85,7 @@
     "font-awesome": "^4.4.0",
     "github-api": "git://github.com/michael/github.git#master",
     "history": "^1.13.0",
-    "limax": "^1.1.4",
+    "limax": "git://github.com/phodal-archive/limax#master",
     "marked": "^0.3.5",
     "material-ui": "^0.13.3",
     "moment": "^2.10.6",
