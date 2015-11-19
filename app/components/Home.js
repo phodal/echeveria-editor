@@ -3,7 +3,6 @@ import { Link } from 'react-router';
 import styles from './Home.module.css';
 const { TextField,Snackbar } = require('material-ui');
 const GitHubApi = require("github-api");
-var slug = require('limax');
 var moment = require('moment');
 var marked = require('marked');
 var toMarkdown = require('to-markdown');
@@ -99,8 +98,7 @@ export default class Home extends Component {
 
   handleTitleChange(e) {
     this.setState({
-      title: e.target.value,
-      url: slug(e.target.value, {tone: false})
+      title: e.target.value
     });
   };
 
