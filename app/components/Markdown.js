@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import styles from './Home.module.css';
 const { TextField } = require('material-ui');
 var marked = require('marked');
+import './github-markdown.css';
 
 export default class Markdown extends Component {
   constructor() {
@@ -36,7 +37,7 @@ export default class Markdown extends Component {
   render() {
 
     return (
-      <div>
+      <div className="markdown-body">
         <div dangerouslySetInnerHTML={this.createMarkup()} />
       </div>
     );
