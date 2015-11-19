@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import styles from './Home.module.css';
 const { TextField,Snackbar } = require('material-ui');
 const GitHubApi = require("github-api");
-import pinyin from "pinyin";
+var slug = require('limax');
 var moment = require('moment');
 
 export default class Home extends Component {
@@ -23,6 +23,7 @@ export default class Home extends Component {
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleAuthorChange = this.handleAuthorChange.bind(this);
     this.handleDateChange = this.handleDateChange.bind(this);
+    this.handleLinkChange = this.handleLinkChange.bind(this);
   }
 
   handleSubmit() {
@@ -56,15 +57,9 @@ export default class Home extends Component {
   };
 
   handleTitleChange(e) {
-    var linkName = pinyin(e.target.value, {
-      style: pinyin.STYLE_NORMAL // 设置拼音风格
-    }).toString();
-    linkName = linkName.replace(/,/g, '-');
-
-    console.log(linkName);
     this.setState({
       title: e.target.value,
-      link: linkName
+      link: slug(e.target.value, {tone: false})
     });
   };
 
@@ -77,6 +72,12 @@ export default class Home extends Component {
   handleDateChange(e) {
     this.setState({
       date: e.target.value
+    });
+  };
+
+  handleLinkChange(e) {
+    this.setState({
+      link: e.target.value
     });
   };
 
@@ -112,24 +113,29 @@ export default class Home extends Component {
                 onChange={this.handleTitleChange}
                 floatingLabelText="标题"
                 hintText="标题"/>
+
               <TextField
                 style={inlineStyles.author}
                 defaultValue={this.state.author}
                 onChange={this.handleAuthorChange}
                 floatingLabelText="作者"
                 hintText="白米粥"/>
+
               <TextField
                 style={inlineStyles.link}
-                value={this.state.link}
                 defaultValue={this.state.link}
+                value={this.state.link}
+                onChange={this.handleLinkChange}
                 floatingLabelText="链接名"
-                hintText="biaoti-2014"/>
+                hintText="baimizhou-2014"/>
+
               <TextField
                 style={inlineStyles.date}
                 defaultValue={this.state.date}
                 onChange={this.handleDateChange}
                 type="date"
                 floatingLabelText="日期" />
+
             </div>
             <div className={styles.publish}>
               <button type="submit" className="fa fa-fw fa-paper-plane-o mode" onClick={this.handleSubmit}
