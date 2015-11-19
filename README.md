@@ -9,7 +9,6 @@
 - Markdown Support
 - ...
 
-
 ##Screenshot
 
 ![Screenshot](screenshot.png)
@@ -23,19 +22,6 @@
 - Electron
 - React
 - Material UI
+- Alloy Editor 
 
-```bash
-#Clone this repository
-
-$ git clone https://github.com/phodal/echeveria-editor
-
-#Go into the repository
-
-$ cd echeveria-editor
-
-#Install dependencies and run the app
-
-$ npm install && npm start
-```
-
-#### License [MIT](LICENSE.md)
+##License [MIT](LICENSE.md)
