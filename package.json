@@ -90,6 +90,7 @@
     "moment": "^2.10.6",
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
+    "react-quill": "git://github.com/jacktrades/react-quill.git#update-to-react-0-14",
     "react-redux": "^4.0.0",
     "react-router": "^1.0.0",
     "react-tap-event-plugin": "^0.2.1",

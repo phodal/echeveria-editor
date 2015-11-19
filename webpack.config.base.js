@@ -9,7 +9,8 @@ module.exports = {
     }, {
       test: /\.json/,
       loader: "json"
-    }]
+    }],
+    noParse: /node_modules\/quill\/dist/
   },
   output: {
     path: path.join(__dirname, 'dist'),
