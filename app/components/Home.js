@@ -144,7 +144,7 @@ export default class Home extends Component {
               <TextField
                 style={inlineStyles.link}
                 defaultValue={this.state.url}
-                value={this.state.link}
+                value={this.state.url}
                 onChange={this.handleURLChange}
                 floatingLabelText="链接名"
                 hintText="baimizhou-2014"/>
