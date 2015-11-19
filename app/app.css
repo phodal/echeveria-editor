@@ -21,9 +21,9 @@ h2 {
   -webkit-user-select: none;
   cursor: default;
   color: #fff;
-  background-color: #aaa;
+  background-color: #466696;
   width: 100%;
-  height: 2.8em;
+  height: 3.3em;
   display: table;
   margin: 0 auto;
 }
@@ -45,7 +45,7 @@ h2 {
   -webkit-app-region: no-drag;
   position: relative;
   display: inline-block;
-  margin: 5px;
+  margin: 12px;
   font-size: 2em;
   color: #fff;
   text-decoration: none;
