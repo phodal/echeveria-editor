@@ -64,8 +64,8 @@ export default class Home extends Component {
     var repo = github.getRepo(username, reponame);
 
     var options = {
-      author: {name: 'Phodal', email: 'h@phodal.com'},
-      committer: {name: 'Phodal', email: 'h@phodal.com'},
+      author: {name: 'Phodal Robot', email: 'robot@phodal.com'},
+      committer: {name: 'Phodal Robot', email: 'robot@phodal.com'},
       encode: true
     };
 
