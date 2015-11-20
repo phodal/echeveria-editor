@@ -10,7 +10,7 @@ class Wechat extends Component {
       author: "",
       url: "",
       date: "",
-      content: "",
+      article: "",
       htmlContent: ""
     };
   }
@@ -23,8 +23,8 @@ class Wechat extends Component {
         author: data.author,
         url: data.url,
         date: data.date,
-        content: data.content,
-        htmlContent: marked(data.content)
+        article: data.article,
+        htmlContent: marked(data.article)
       });
       console.log(this.state.htmlContent)
     }

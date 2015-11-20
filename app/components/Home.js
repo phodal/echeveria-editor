@@ -35,9 +35,9 @@ export default class Home extends Component {
         author: data.author,
         url: data.url,
         date: data.date,
-        content: data.content
+        article: data.article
       });
-      document.getElementById('editor').innerHTML = data.contentHTML;
+      document.getElementById('editor').innerHTML = data.articleHTML;
     }
   }
 
@@ -64,8 +64,8 @@ export default class Home extends Component {
     var repo = github.getRepo(username, reponame);
 
     var options = {
-      author: {name: username, email: 'robot@baimizhou.net'},
-      committer: {name: username, email: 'robot@baimizhou.net'},
+      author: {name: 'Phodal', email: 'h@phodal.com'},
+      committer: {name: 'Phodal', email: 'h@phodal.com'},
       encode: true
     };
 
@@ -77,14 +77,14 @@ export default class Home extends Component {
       author: that.state.author,
       url: that.state.url,
       date: that.state.date,
-      contentHTML: innerHTML,
-      content: md
+      articleHTML: innerHTML,
+      article: md
     };
 
     var stringifyData = JSON.stringify(data);
     localStorage.setItem('data', stringifyData);
 
-    repo.write('master', 'contents/' + data.url + '.json', stringifyData, 'Robot: add article ' + data.title, options, function (err, data) {
+    repo.write('master', 'content/' + data.url + '.json', stringifyData, 'Robot: add article ' + data.title, options, function (err, data) {
       if(data.commit){
         that.setState({message: "上传成功" + JSON.stringify(data)});
         that.refs.snackbar.show();

@@ -13,7 +13,7 @@ export default class Markdown extends Component {
       author: "",
       url: "",
       date: "",
-      content: ""
+      article: ""
     };
   }
 
@@ -25,13 +25,13 @@ export default class Markdown extends Component {
         author: data.author,
         url: data.url,
         date: data.date,
-        content: data.content
+        article: data.article
       });
     }
   }
 
   createMarkup() {
-    return {__html: marked(this.state.content)};
+    return {__html: marked(this.state.article)};
   }
 
   render() {
